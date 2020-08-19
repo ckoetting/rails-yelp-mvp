@@ -1,0 +1,31 @@
+<body>
+<div class="card text-center">
+  <div class="card-header">
+    <%=@restaurant.category%>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%=@restaurant.name%></h5>
+    <p class="card-text"><%=@restaurant.address%>, <%=@restaurant.phone_number%></p>
+    <a href="/restaurants/<%=@restaurant.id%>/reviews/new" class="btn btn-primary">Leave a review</a>
+  </div>
+  <div class="card-footer text-muted">
+    <% all_reviews = Review.where(restaurant_id: @restaurant.id)%>
+    <% avg = 0%>
+    <% all_reviews.each do |review|%>
+    <% avg += review.rating%>
+    <%end%>
+    <% avg = (avg / Review.where(restaurant_id: @restaurant.id).size)%>
+    <a class="btn btn-info" href="/restaurants" role="button">Back to all restaurants</a>
+  </div>
+   Average rating: <%=avg%>
+</div>
+<% all_reviews.each do |review|%>
+<div class="card-body">
+    <p class="card-text"><%=review.content%></p>
+  </div>
+  <div class="card-footer text-muted">
+    <%= review.rating %>
+  </div>
+</div>
+<%end%>
+</body>

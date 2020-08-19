@@ -1,0 +1,26 @@
+<body>
+<div class="d-flex flex-row justify-content-between m-5">
+<h1>All Restaurants:</h1>
+<a class="btn btn-primary" href="/restaurants/new" role="button">Add new Restaurant</a>
+</div>
+<div class="container">
+<div class="restaurants">
+<% @restaurants.each do |restaurant|%>
+<div class="row">
+<div class="col" align="center">
+<div class="card text-center">
+  <div class="card-header">
+    <%=restaurant.category%>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= link_to restaurant.name, restaurant_path(restaurant), class: "btn btn-dark"%></h5>
+    <p class="card-text"><%=restaurant.address%>, <%=restaurant.phone_number%></p>
+  </div>
+  <div class="card-footer text-muted">
+    Placeholder Review Average
+  </div>
+</div>
+<%end%>
+</div>
+</div>
+</body>

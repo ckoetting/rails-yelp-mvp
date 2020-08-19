@@ -1,0 +1,22 @@
+<body>
+<h1 align="center">Add a new Restaurant</h1>
+<form class="new_restaurant" id="new_restaurant" action="/restaurants" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="esz3tofwey19HfnSkjouFqZRhAp1sfQIitcofwgn02aecZ7Yxnd1voTiVYvv6s6KdPob8bjrpSuWTH1pT3Z8HQ==">
+  <div class="form-group">
+  <label for="restaurant_name">Name</label>
+  <input type="text" name="restaurant[name]" id="restaurant_name" class="form-control">
+  </div>
+   <div class="form-group">
+  <label for="restaurant_address">Address</label>
+  <input type="text" name="restaurant[address]" id="restaurant_address" class="form-control">
+  </div>
+   <div class="form-group">
+  <label for="restaurant_category">Category</label>
+  <input type="text" name="restaurant[category]" id="restaurant_category" class="form-control">
+  </div>
+   <div class="form-group">
+  <label for="restaurant_phone_number">Phone number</label>
+  <input type="text" name="restaurant[phone_number]" id="restaurant_phone_number" class="form-control">
+  </div>
+  <input type="submit" name="commit" value="Create Restaurant" data-disable-with="Create Restaurant" class="btn btn-primary">
+</form>
+</body>
